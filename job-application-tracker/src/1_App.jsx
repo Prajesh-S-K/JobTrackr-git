@@ -1,10 +1,19 @@
-import JobTestView from './8_test_component/8.2_JobTestView'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './4_components/4.1_Navbar'
+import Dashboard from './5_pages/5.1_Dashboard'
+import AddJob from './5_pages/5.2_AddJob'
+
 
 function App() {
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <JobTestView />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/add" element={<AddJob />} />
+      </Routes>
+    </Router>
   )
 }
 
